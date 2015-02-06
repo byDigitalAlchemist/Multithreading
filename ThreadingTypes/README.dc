@@ -1,0 +1,16 @@
+Basically two ways to simulate threading in java.
+
+
+Extend Thread Class, 
+	And you need to override run method to give it customized implementation.
+
+Implement Runnable Interface
+	And pass it to the Thread Constructor.
+
+
+Executor Services ( If you want thread in Thread Pool)
+	
+MyThread.start() vs MyThread.run() 
+	if i uses run() , it will execute the method in the main method thread of the 
+	Application, else start() ask for the class to find run method implemenation and 
+	start in separate thread.

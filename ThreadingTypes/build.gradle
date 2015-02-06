@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+
+jar {
+    baseName = 'ThreadingTypes'
+    version =  '0.1.0'
+}
+
+task(runMain, dependsOn: 'classes', type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    args ''
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile "joda-time:joda-time:2.2"
+	compile "org.apache.logging.log4j:log4j-core:2.1"
+}
+
