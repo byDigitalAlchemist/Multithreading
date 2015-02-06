@@ -1,0 +1,26 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+mainClassName = 'org.digitalalchemist.threading.Application'
+
+jar {
+    baseName = 'GradleThreadingTemplate'
+    version =  '0.1.0'
+}
+
+task(runMain, dependsOn: 'classes', type: JavaExec) {
+    main = 'org.digitalalchemist.threading.Application'
+    classpath = sourceSets.main.runtimeClasspath
+    args ''
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile "joda-time:joda-time:2.2"
+}
+
